@@ -21,8 +21,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors({
   credentials: true,
-  //origin: 'http://localhost:3000'
-  origin: 'https://gulapp-47a12.web.app/'
+  origin: 'http://localhost:3000'
+  //origin: 'https://gulapp-47a12.web.app/'
 }));
 
 // Express Session
@@ -42,7 +42,7 @@ app.get('/', (req, res) => res.send('Nothing to do here!'))
 app.post('/register', function(req, res){
 	var password = req.body.password;
   var password2 = req.body.password2;
-
+  console.log("Esta intentando registrar")
   if (password == password2){
     var newUser = new User({
   		fullName: req.body.fullName,
